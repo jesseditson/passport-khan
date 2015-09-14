@@ -1,0 +1,36 @@
+{
+  "name": "passport-khan",
+  "version": "0.1.0",
+  "description": "A passport strategy for khan academy",
+  "main": "lib/passport-khan",
+  "scripts": {
+    "test": "node_modules/.bin/vows test/*-test.js --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesseditson/passport-khan.git"
+  },
+  "keywords": [
+    "Passport",
+    "Khan Academy",
+    "Authentication"
+  ],
+  "dependencies": {
+    "passport-oauth": "^1.0.0",
+    "pkginfo": "^0.3.0"
+  },
+  "devDependencies": {
+    "vows": "^0.8.1"
+  },
+  "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/jesseditson/passport-khan/issues"
+  },
+  "homepage": "https://github.com/jesseditson/passport-khan#readme"
+}
