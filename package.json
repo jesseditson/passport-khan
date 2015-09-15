@@ -16,7 +16,7 @@
     "Authentication"
   ],
   "dependencies": {
-    "khan": "jesseditson/khan#user_and_auth",
+    "khan": "^0.1.3",
     "passport-strategy": "^1.0.0",
     "pkginfo": "^0.3.0",
     "utils-merge": "^1.0.0"
