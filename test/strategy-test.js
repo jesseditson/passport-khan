@@ -29,10 +29,20 @@ vows.describe('KhanStrategy').addBatch({
       function() {})
 
       // mock
-      strategy._oauth.get = function(url, token, tokenSecret, callback) {
-        var body = JSON.stringify(userInfo)
-
-        callback(null, body, undefined)
+      strategy.khan = function(ct, cs) {
+        return {
+          user: function() {
+            return {
+              catch: function(cb) {
+                return this
+              },
+              then: function(resolve) {
+                resolve(userInfo, JSON.stringify(userInfo))
+                return this
+              }
+            }
+          }
+        }
       }
 
       return strategy
@@ -77,8 +87,21 @@ vows.describe('KhanStrategy').addBatch({
       function() {})
 
       // mock
-      strategy._oauth.get = function(url, token, tokenSecret, callback) {
-        callback(new Error('something went wrong'))
+      strategy.khan = function(ct, cs) {
+        return {
+          user: function() {
+            return {
+              catch: function(reject) {
+                reject({response: {text: 'my error goes here'}})
+                return this
+              },
+              then: function(resolve) {
+                resolve()
+                return this
+              }
+            }
+          }
+        }
       }
 
       return strategy
@@ -98,9 +121,6 @@ vows.describe('KhanStrategy').addBatch({
 
       'should error' : function(err, req) {
         assert.isNotNull(err)
-      },
-      'should wrap error in InternalOAuthError' : function(err, req) {
-        assert.equal(err.constructor.name, 'InternalOAuthError')
       },
       'should not load profile' : function(err, profile) {
         assert.isUndefined(profile)

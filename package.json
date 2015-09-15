@@ -16,19 +16,16 @@
     "Authentication"
   ],
   "dependencies": {
-    "passport-oauth": "^1.0.0",
-    "pkginfo": "^0.3.0"
+    "khan": "jesseditson/khan#user_and_auth",
+    "passport-strategy": "^1.0.0",
+    "pkginfo": "^0.3.0",
+    "utils-merge": "^1.0.0"
   },
   "devDependencies": {
     "vows": "^0.8.1"
   },
   "author": "Jesse Ditson <jesse.ditson@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jesseditson/passport-khan/issues"
   },
